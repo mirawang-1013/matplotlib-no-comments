@@ -1,0 +1,4 @@
+class ImageComparisonFailure(AssertionError):
+
+    
+
