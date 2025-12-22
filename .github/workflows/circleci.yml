@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: GitHub Action step
         uses:
-          scientific-python/circleci-artifacts-redirector-action@839631420e45a08af893032e5a5e8843bf47e8ff  # v1.2.0
+          scientific-python/circleci-artifacts-redirector-action@5d358ff96e96429a5c64a969bb4a574555439f4f  # v1.3.1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           api-token: ${{ secrets.CIRCLECI_TOKEN }}
@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Post warnings/errors as review
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8  # v5.0.0
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8  # v6.0.1
         with:
           persist-credentials: false
 
@@ -41,7 +41,7 @@ jobs:
 
       - name: Set up reviewdog
         if: "${{ steps.fetch-artifacts.outputs.count != 0 }}"
-        uses: reviewdog/action-setup@e04ffabe3898a0af8d0fb1af00c188831c4b5893  # v1.3.2
+        uses: reviewdog/action-setup@d8a7baabd7f3e8544ee4dbde3ee41d0011c3a93f  # v1.5.0
         with:
           reviewdog_version: latest
 
